@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Stalls</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d32f2f;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 50px;
+        }
+
+        .stalls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stall-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .stall-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .stall-header {
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .stall-1 .stall-header {
+            background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+        }
+
+        .stall-2 .stall-header {
+            background: linear-gradient(135deg, #388e3c 0%, #4caf50 100%);
+        }
+
+        .stall-3 .stall-header {
+            background: linear-gradient(135deg, #f57c00 0%, #ff9800 100%);
+        }
+
+        .stall-icon {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+
+        .stall-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stall-tagline {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .stall-body {
+            padding: 25px;
+        }
+
+        .specialty {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .menu-items {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .menu-items li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-items li:last-child {
+            border-bottom: none;
+        }
+
+        .price {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+        .rating {
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1.2em;
+            letter-spacing: 3px;
+        }
+
+        .order-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .stall-1 .order-btn {
+            background: #d32f2f;
+            color: white;
+        }
+
+        .stall-1 .order-btn:hover {
+            background: #b71c1c;
+        }
+
+        .stall-2 .order-btn {
+            background: #388e3c;
+            color: white;
+        }
+
+        .stall-2 .order-btn:hover {
+            background: #2e7d32;
+        }
+
+        .stall-3 .order-btn {
+            background: #f57c00;
+            color: white;
+        }
+
+        .stall-3 .order-btn:hover {
+            background: #e65100;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .stalls-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍕 Pizza Stalls 🍕</h1>
+        <p class="subtitle">Choose your favorite slice of heaven!</p>
+
+        <div class="stalls-grid">
+            <!-- Stall 1 -->
+            <div class="stall-card stall-1">
+                <div class="stall-header">
+                    <div class="stall-icon">🍕</div>
+                    <div class="stall-name">Napoli Nights</div>
+                    <div class="stall-tagline">Authentic Italian Pizza</div>
+                </div>
+                <div class="stall-body">
+                    <div class="specialty">🔥 Specialty: Wood-Fired Classics</div>
+                    <ul class="menu-items">
+                        <li>
+                            <span>Margherita</span>
+                            <span class="price">$12</span>
+                        </li>
+                        <li>
+                            <span>Quattro Formaggi</span>
+                            <span class="price">$15</span>
+                        </li>
+                        <li>
+                            <span>Prosciutto e Rucola</span>
+                            <span class="price">$16</span>
+                        </li>
+                        <li>
+                            <span>Diavola</span>
+                            <span class="price">$14</span>
+                        </li>
+                    </ul>
+                    <div class="rating">
+                        <div class="stars">★★★★★</div>
+                        <div style="margin-top: 5px; color: #666;">4.9/5 (500+ reviews)</div>
+                    </div>
+                    <button class="order-btn" onclick="orderPizza('Napoli Nights')">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Stall 2 -->
+            <div class="stall-card stall-2">
+                <div class="stall-header">
+                    <div class="stall-icon">🌿</div>
+                    <div class="stall-name">Green Garden</div>
+                    <div class="stall-tagline">Fresh & Veggie Delights</div>
+                </div>
+                <div class="stall-body">
+                    <div class="specialty">🥬 Specialty: Plant-Based Perfection</div>
+                    <ul class="menu-items">
+                        <li>
+                            <span>Mediterranean Veggie</span>
+                            <span class="price">$13</span>
+                        </li>
+                        <li>
+                            <span>Spinach & Artichoke</span>
+                            <span class="price">$14</span>
+                        </li>
+                        <li>
+                            <span>Vegan Supreme</span>
+                            <span class="price">$15</span>
+                        </li>
+                        <li>
+                            <span>Mushroom Truffle</span>
+                            <span class="price">$17</span>
+                        </li>
+                    </ul>
+                    <div class="rating">
+                        <div class="stars">★★★★★</div>
+                        <div style="margin-top: 5px; color: #666;">4.8/5 (380+ reviews)</div>
+                    </div>
+                    <button class="order-btn" onclick="orderPizza('Green Garden')">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Stall 3 -->
+            <div class="stall-card stall-3">
+                <div class="stall-header">
+                    <div class="stall-icon">🔥</div>
+                    <div class="stall-name">Meat Lovers Paradise</div>
+                    <div class="stall-tagline">For the Carnivores</div>
+                </div>
+                <div class="stall-body">
+                    <div class="specialty">🥓 Specialty: Loaded Meat Pizzas</div>
+                    <ul class="menu-items">
+                        <li>
+                            <span>BBQ Chicken</span>
+                            <span class="price">$15</span>
+                        </li>
+                        <li>
+                            <span>Pepperoni Feast</span>
+                            <span class="price">$14</span>
+                        </li>
+                        <li>
+                            <span>Bacon Cheeseburger</span>
+                            <span class="price">$16</span>
+                        </li>
+                        <li>
+                            <span>The Butcher's Special</span>
+                            <span class="price">$18</span>
+                        </li>
+                    </ul>
+                    <div class="rating">
+                        <div class="stars">★★★★★</div>
+                        <div style="margin-top: 5px; color: #666;">4.9/5 (620+ reviews)</div>
+                    </div>
+                    <button class="order-btn" onclick="orderPizza('Meat Lovers Paradise')">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function orderPizza(stallName) {
+            alert(`🍕 Great choice! Your order from ${stallName} is being prepared!\n\nThank you for ordering with us!`);
+        }
+
+        // Add hover effect sound (optional)
+        document.querySelectorAll('.stall-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+        });
+    </script>
+</body>
+</html>
